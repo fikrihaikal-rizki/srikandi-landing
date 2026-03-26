@@ -4,10 +4,10 @@ import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
 const props = defineProps({
   path: { type: String, required: true },
   alt: { type: String, default: "Gambar Properti" },
-  containerClass: { type: String, default: "" }, // Untuk atur lebar/tinggi bingkai
-  imageClass: { type: String, default: "" },     // Untuk object-right dll
+  containerClass: { type: String, default: "" },
+  imageClass: { type: String, default: "" },
   priority: { type: Boolean, default: false },
-  speed: { type: Number, default: 0.15 },        // Kecepatan parallax
+  speed: { type: Number, default: 0.15 },
 });
 
 const isLoaded = ref(false);
@@ -17,7 +17,6 @@ const yOffset = ref(0);
 
 const endpoint = "https://ik.imagekit.io/6066gz5in/SRIKANDI/";
 
-// Logic URL ImageKit Anda
 const mainUrl = computed(() => `${endpoint}${props.path}?tr=w-1200,q-100`);
 const thumbUrl = computed(() => `${endpoint}${props.path}?tr=w-50,q-10,bl-10`);
 const srcSet = computed(() => {
@@ -34,7 +33,6 @@ const handleParallax = () => {
   const rect = containerRef.value.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
 
-  // Hanya hitung jika elemen masuk area layar
   if (rect.top < viewportHeight && rect.bottom > 0) {
     const distanceToCenter = rect.top - (viewportHeight / 2 - rect.height / 2);
     yOffset.value = distanceToCenter * props.speed;
@@ -63,12 +61,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div 
-    ref="containerRef" 
-    class="relative overflow-hidden" 
+  <div
+    ref="containerRef"
+    class="relative overflow-hidden"
     :class="containerClass"
   >
-    <div 
+    <div
       class="absolute -top-[10%] left-0 w-full h-[calc(100%)] will-change-transform bg-red-300"
       :style="{ transform: `translate3d(0, ${yOffset}px, 0)` }"
     >
@@ -90,7 +88,7 @@ onUnmounted(() => {
         class="transition-all duration-1000 ease-out"
         :class="[
           isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105',
-          imageClass, // Di sini Anda bisa masukkan 'object-right' dsb.
+          imageClass,
         ]"
         @load="onImageLoad"
       />
@@ -99,14 +97,13 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* Mengaktifkan akselerasi GPU agar scroll semulus sutra */
-img, .will-change-transform {
+img,
+.will-change-transform {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* Pastikan gambar di dalam canvas selalu memenuhi area */
 img {
   object-fit: cover;
 }

@@ -1,0 +1,77 @@
+---
+import IKImage from "../vue/IKImage.vue";
+---
+
+<div class="w-screen overflow-hidden bg-[#ffeff2]">
+  <div class="relative w-screen h-screen">
+    <IKImage
+      client:load
+      path="page1_home.png"
+      alt=""
+      containerClass="absolute inset-x-0 bottom-0 w-full h-2/5"
+      imageClass="object-cover object-top sm:object-top-left h-full sm:w-[calc(70%)]"
+      priority={false}
+    />
+    <div class="absolute top-0 h-full w-full flex justify-end">
+      <div class="relative h-full w-full sm:w-1/2">
+        <IKImage
+          client:load
+          path="page1_gate.png"
+          alt=""
+          containerClass="absolute top-0 -left-75 sm:left-30 h-3/4 sm:h-screen w-[calc(180%)] sm:w-[calc(100%)] my-10 sm:my-0 mr-20 sm:mr-0"
+          imageClass="h-full object-cover object-right sm:object-left"
+          priority={false}
+        />
+        <IKImage
+          client:load
+          path="page1_person.png"
+          alt=""
+          containerClass="absolute bottom-0 right-0 w-[calc(70%)] sm:w-[calc(100%)] h-[calc(70%)] sm:h-[calc(80%)]"
+          imageClass="h-full sm:h-screen object-cover object-top-left"
+          priority={false}
+        />
+      </div>
+    </div>
+    <div class="relative w-3/4 h-screen flex flex-col items-center z-100">
+      <div
+        class="relative w-full sm:w-3/4 h-screen flex flex-col justify-center gap-3 sm:gap-5 pl-5"
+      >
+        <IKImage
+          client:load
+          path="page1_logo.png"
+          alt=""
+          containerClass="absolute top-10"
+          imageClass="h-15 object-cover hidden sm:block"
+          priority={true}
+        />
+        <span class="font-['Amethysta'] sm:text-2xl"
+          ><span class="font-bold">Kost yang Terlihat Aman</span><br /> di Tahun
+          Pertama,</span
+        >
+        <span
+          class="font-['Caudex'] text-2xl sm:text-5xl font-[1000] text-[#c43076]"
+          ><span class="sm:hidden"
+            >BELUM TENTU<br /> AMAN DI <br />TAHUN KELIMA.</span
+          ><span class="hidden sm:block"
+            >BELUM TENTU AMAN <br />DI TAHUN KELIMA.</span
+          >
+        </span>
+        <div class="relative w-full flex justify-start sm:hidden">
+          <div class="bg-[#c43076] h-0.5 my-4 w-[calc(60%)] p-0"></div>
+        </div>
+        <div
+          class="font-['Montserrat'] text-xs sm:text-base text-gray-600 w-[calc(70%)] sm:w-full"
+        >
+          <span class="sm:hidden"
+            >Investasi kost bukan hanya soal bangunan, tetapi bagaimana
+            lingkungannya tetap terjaga dari waktu ke waktu.</span
+          >
+          <span class="hidden sm:block"
+            >Investasi kost bukan hanya soal bangunan, tetapi bagaimana <br />
+            lingkungannya tetap terjaga dari waktu ke waktu.</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

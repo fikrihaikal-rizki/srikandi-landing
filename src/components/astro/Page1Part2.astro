@@ -1,0 +1,80 @@
+---
+import ParallaxImage from "../vue/ParallaxImage.vue";
+---
+
+<div class="w-screen overflow-hidden bg-[#ffeff2]">
+  <div class="relative w-screen h-screen">
+    <ParallaxImage
+      client:load
+      path="page2_person.jpg"
+      alt=""
+      priority={false}
+      containerClass="absolute inset-x-0 top-0 w-full h-[calc(70%)] sm:h-3/4"
+      imageClass="object-fit object-[20%_100%] sm:object-top h-full sm:w-full"
+      speed={0.19}
+    />
+    <div class="absolute bottom-0 w-full h-[calc(40%)]">
+      <div
+        class="absolute -top-40 left-1/2 -translate-x-1/2 w-[200vw] aspect-square bg-[#fff4ed]/50 rounded-full"
+      >
+      </div>
+      <div
+        class="absolute -top-20 left-1/2 -translate-x-1/2 w-[300vw] aspect-square bg-[#fff4ed] rounded-full"
+      >
+      </div>
+      <div class="absolute -top-15 sm:-top-5 w-full h-full flex justify-center">
+        <div class="w-9/10 sm:w-2/3 h-[calc(110%)]">
+          <div class="max-w-2xl mx-auto space-y-6">
+            <div
+              class="font-['Caudex'] text-xl sm:text-3xl font-black text-[#272946] leading-tight text-center"
+            >
+              <span class="sm:hidden"
+                >Masalah Kost Jarang <br /> Terlihat di Awal Beroperasi</span
+              >
+              <span class="hidden sm:block"
+                >Masalah Kost Jarang Terlihat di Awal Beroperasi</span
+              >
+            </div>
+
+            <div class="space-y-3 leading-relaxed text-xs/6 sm:text-lg">
+              <p class="font-['Montserrat'] text-justify">
+                Banyak kost berjalan baik di awal. Namun seiring waktu,
+                tantangan muncul dari lingkungan, kontrol penghuni, dan
+                konsistensi keamanan.
+              </p>
+              <p class="font-['Caudex'] italic font-semibold text-[#272946]">
+                Bukan karena pasarnya menurun, <br /> tetapi karena konsepnya tidak
+                dirancang jangka panjang.
+              </p>
+            </div>
+
+            <div class="flex justify-center pt-2">
+              <button
+                class="group flex items-center bg-[#2D334D] hover:bg-[#1E233A] transition-colors rounded-full pl-8 pr-1 py-2 text-white text-sm font-bold shadow-xl font-['Montserrat']"
+              >
+                <span>Beri alternatif yang lebih aman?</span>
+                <div
+                  class="ml-4 w-8 h-8 bg-[#D83179] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
